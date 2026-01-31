@@ -307,6 +307,55 @@
             font-size: 0.95rem;
         }
 
+        /* Schedule Table */
+        .schedule-table {
+            overflow-x: auto;
+        }
+
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .schedule-table th {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .schedule-table td:last-child {
+            text-align: right;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        .schedule-table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .schedule-table tbody tr:hover {
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .highlight-row {
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .highlight-row td {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
         /* Call for Papers */
         .cfp-content h3 {
             font-size: 1.2rem;
@@ -319,19 +368,19 @@
             margin-top: 0;
         }
 
-        .cfp-content ul {
+        .cfp-content > ul {
             list-style: none;
             padding: 0;
         }
 
-        .cfp-content li {
+        .cfp-content > ul > li {
             color: var(--text-secondary);
             padding: 8px 0;
             padding-left: 20px;
             position: relative;
         }
 
-        .cfp-content li::before {
+        .cfp-content > ul > li::before {
             content: '›';
             position: absolute;
             left: 0;
@@ -339,15 +388,80 @@
             font-weight: bold;
         }
 
-        .cfp-content .dates li {
+        /* Track Cards */
+        .track-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .track-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: border-color 0.3s ease;
+        }
+
+        .track-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .track-card h3 {
+            color: var(--accent);
+            margin: 0 0 15px;
+        }
+
+        .track-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .track-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .track-card li {
+            color: var(--text-secondary);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .track-card li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .track-card .dates {
+            margin-top: 20px;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        .track-card .dates li {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .cfp-content .dates strong {
-            color: var(--accent);
+        .track-card .btn {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .track-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .btn {
@@ -380,7 +494,7 @@
             color: var(--accent);
         }
 
-        /* Organizers */
+        /* People Grid */
         .people {
             display: flex;
             flex-wrap: wrap;
@@ -485,7 +599,11 @@
             }
 
             .people {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .person {
+                width: 120px;
             }
         }
     </style>
@@ -534,7 +652,7 @@
     <p>
         However, current video generation models face significant challenges in achieving the ideal Video World Model. This workshop aims to provide a platform for researchers from both academia and industry to discuss and address these challenges, foster collaboration, advance related academic research, and promote the practical application of Video World Models.
     </p>
-    
+
     <div class="topics">
         <div class="topic-card">
             <div class="icon">🎮</div>
@@ -570,10 +688,61 @@
 
 <section id="schedule">
     <h2>Schedule</h2>
-    <div class="coming-soon">
-        <div class="icon">📅</div>
-        <h3>Coming Soon</h3>
-        <p>The detailed schedule will be released closer to the workshop date.</p>
+    <div class="schedule-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Opening Remarks</td>
+                    <td>8:30 AM - 8:35 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #1</td>
+                    <td>8:35 AM - 8:55 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #2</td>
+                    <td>8:55 AM - 9:15 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #3</td>
+                    <td>9:15 AM - 9:35 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #4</td>
+                    <td>9:35 AM - 9:55 AM</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Poster Session + Coffee Break + Best Paper Award</td>
+                    <td>9:55 AM - 10:35 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #5</td>
+                    <td>10:35 AM - 10:55 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #6</td>
+                    <td>10:55 AM - 11:15 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #7</td>
+                    <td>11:15 AM - 11:35 AM</td>
+                </tr>
+                <tr>
+                    <td>Invited Talk #8</td>
+                    <td>11:35 AM - 11:55 AM</td>
+                </tr>
+                <tr>
+                    <td>Closing Remarks</td>
+                    <td>11:55 AM - 12:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
@@ -592,27 +761,46 @@
             <li>Novel architectures and training methods for video world models</li>
         </ul>
 
+        <div class="track-container">
+            <div class="track-card">
+                <h3>Track 1: Proceedings</h3>
+                <p>Submissions must present <strong>original, unpublished research</strong>. Manuscripts should be 4–8 pages (excluding references) using the CVPR 2026 template. Accepted papers will be published in the CVPR 2026 Workshop Proceedings.</p>
+                <ul class="dates">
+                    <li><span>Submission Deadline</span> <strong>March 1, 2026 (AoE)</strong></li>
+                    <li><span>Notification to Authors</span> <strong>March 20, 2026</strong></li>
+                    <li><span>Camera-Ready Deadline</span> <strong>April 10, 2026</strong></li>
+                </ul>
+                <div style="text-align: center;">
+                    <a href="#" class="btn disabled">Submission Portal (Coming Soon)</a>
+                </div>
+            </div>
+
+            <div class="track-card">
+                <h3>Track 2: Non-Proceedings</h3>
+                <p>A flexible, <strong>non-archival venue</strong> for sharing a broad range of contributions without restrictive publishing constraints, formatting requirements, or page limits. We warmly welcome:</p>
+                <ul>
+                    <li>Works-in-progress and preliminary results</li>
+                    <li>Open Datasets</li>
+                    <li>Technical Reports</li>
+                    <li>Recent work submitted or published within the last year</li>
+                    <li>Position papers and conceptual frameworks</li>
+                </ul>
+                <ul class="dates">
+                    <li><span>Submission Deadline</span> <strong>April 14, 2026 (AoE)</strong></li>
+                    <li><span>Notification to Authors</span> <strong>May 4, 2026</strong></li>
+                    <li><span>Camera-Ready Deadline</span> <strong>May 11, 2026</strong></li>
+                </ul>
+                <div style="text-align: center;">
+                    <a href="#" class="btn disabled">Submission Portal (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+
         <h3>Submission Guidelines</h3>
         <ul>
-            <li>All papers must be submitted via the CVPR 2026 workshop submission portal</li>
-            <li>Submissions should be in PDF format following the official CVPR 2026 template</li>
-            <li>Papers should be anonymized for double-blind review</li>
+            <li>Proceedings Track papers must follow the official CVPR 2026 template and be anonymized for double-blind review</li>
             <li>Supplementary materials (videos, code, etc.) are welcome</li>
-            <li>Accepted papers will be presented as oral or poster presentations</li>
-            <li>Best Paper Awards will be granted to outstanding contributions</li>
         </ul>
-
-        <h3>Important Dates</h3>
-        <ul class="dates">
-            <li><span>Paper Submission Deadline</span> <strong>TBD</strong></li>
-            <li><span>Author Notification</span> <strong>TBD</strong></li>
-            <li><span>Camera-Ready Submission</span> <strong>TBD</strong></li>
-            <li><span>Workshop Date</span> <strong>TBD</strong></li>
-        </ul>
-
-        <div style="text-align: center;">
-            <span class="btn disabled">Submission Portal (Coming Soon)</span>
-        </div>
     </div>
 </section>
 
@@ -665,6 +853,42 @@
             <a href="https://xh-liu.github.io/" target="_blank">
                 <img src="images/xihui_liu.jpeg" alt="Xihui Liu">
                 <p><strong>Xihui Liu</strong><span>HKU</span></p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="committee">
+    <h2>Program Committee</h2>
+    <div class="people">
+        <div class="person">
+            <a href="https://yujiwen.github.io/" target="_blank">
+                <img src="images/jiwen_yu.jpg" alt="Jiwen Yu">
+                <p><strong>Jiwen Yu</strong><span>HKU</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://iranqin.github.io/" target="_blank">
+                <img src="images/yiran_qin.jpg" alt="Yiran Qin">
+                <p><strong>Yiran Qin</strong><span>Oxford</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://tinnerhrhe.github.io/" target="_blank">
+                <img src="images/haoran_he.jpg" alt="Haoran He">
+                <p><strong>Haoran He</strong><span>HKUST</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://scholar.google.com/citations?user=dB86D_cAAAAJ&hl=zh-CN" target="_blank">
+                <img src="images/kaiyi_huang.jpg" alt="Kaiyi Huang">
+                <p><strong>Kaiyi Huang</strong><span>HKU</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://tyshiwo1.github.io/" target="_blank">
+                <img src="images/yao_teng.jpg" alt="Yao Teng">
+                <p><strong>Yao Teng</strong><span>HKU</span></p>
             </a>
         </div>
     </div>
