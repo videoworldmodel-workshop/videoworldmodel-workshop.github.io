@@ -548,6 +548,34 @@
             font-size: 0.8rem;
         }
 
+        /* Speakers specific styling - larger spacing */
+        #speakers .people {
+            gap: 50px;
+        }
+
+        #speakers .person {
+            width: 180px;
+        }
+
+        #speakers .person img {
+            width: 140px;
+            height: 140px;
+        }
+
+        #speakers .person p {
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        #speakers .person strong {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        #speakers .person span {
+            font-size: 0.9rem;
+        }
+
         /* Contact */
         .contact-content {
             text-align: center;
@@ -679,10 +707,43 @@
 
 <section id="speakers">
     <h2>Invited Speakers</h2>
-    <div class="coming-soon">
-        <div class="icon">🎤</div>
-        <h3>Coming Soon</h3>
-        <p>Our speaker lineup is being finalized. Stay tuned for exciting announcements!</p>
+    <div class="people" style="max-width: 900px; margin: 0 auto;">
+        <div class="person">
+            <a href="https://www.robots.ox.ac.uk/~vedaldi/" target="_blank">
+                <img src="images/andrea_vedaldi.jpg" alt="Andrea Vedaldi">
+                <p><strong>Andrea Vedaldi</strong><span>Oxford</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://jparkerholder.github.io/" target="_blank">
+                <img src="images/jack_parker_holder.png" alt="Jack Parker-Holder">
+                <p><strong>Jack Parker-Holder</strong><span>Google DeepMind</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://yilundu.github.io/" target="_blank">
+                <img src="images/yilun_du.png" alt="Yilun Du">
+                <p><strong>Yilun Du</strong><span>Harvard</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://songhan.mit.edu/" target="_blank">
+                <img src="images/song_han.jpeg" alt="Song Han">
+                <p><strong>Song Han</strong><span>MIT</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://sherryy.github.io/" target="_blank">
+                <img src="images/sherry_yang.jpeg" alt="Sherry Yang">
+                <p><strong>Sherry Yang</strong><span>NYU / Google DeepMind</span></p>
+            </a>
+        </div>
+        <div class="person">
+            <a href="https://xingangpan.github.io/" target="_blank">
+                <img src="images/xingang_pan.png" alt="Xingang Pan">
+                <p><strong>Xingang Pan</strong><span>NTU</span></p>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -702,40 +763,32 @@
                     <td>8:30 AM - 8:35 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #1</td>
-                    <td>8:35 AM - 8:55 AM</td>
+                    <td>Invited Talk #1 (20 min + 5 min Q&amp;A)</td>
+                    <td>8:35 AM - 9:00 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #2</td>
-                    <td>8:55 AM - 9:15 AM</td>
+                    <td>Invited Talk #2 (20 min + 5 min Q&amp;A)</td>
+                    <td>9:00 AM - 9:25 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #3</td>
-                    <td>9:15 AM - 9:35 AM</td>
-                </tr>
-                <tr>
-                    <td>Invited Talk #4</td>
-                    <td>9:35 AM - 9:55 AM</td>
+                    <td>Invited Talk #3 (20 min + 5 min Q&amp;A)</td>
+                    <td>9:25 AM - 9:50 AM</td>
                 </tr>
                 <tr class="highlight-row">
                     <td>Poster Session + Coffee Break + Best Paper Award</td>
-                    <td>9:55 AM - 10:35 AM</td>
+                    <td>9:50 AM - 10:40 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #5</td>
-                    <td>10:35 AM - 10:55 AM</td>
+                    <td>Invited Talk #4 (20 min + 5 min Q&amp;A)</td>
+                    <td>10:40 AM - 11:05 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #6</td>
-                    <td>10:55 AM - 11:15 AM</td>
+                    <td>Invited Talk #5 (20 min + 5 min Q&amp;A)</td>
+                    <td>11:05 AM - 11:30 AM</td>
                 </tr>
                 <tr>
-                    <td>Invited Talk #7</td>
-                    <td>11:15 AM - 11:35 AM</td>
-                </tr>
-                <tr>
-                    <td>Invited Talk #8</td>
-                    <td>11:35 AM - 11:55 AM</td>
+                    <td>Invited Talk #6 (20 min + 5 min Q&amp;A)</td>
+                    <td>11:30 AM - 11:55 AM</td>
                 </tr>
                 <tr>
                     <td>Closing Remarks</td>
@@ -806,7 +859,7 @@
 
 <section id="organizers">
     <h2>Organizers</h2>
-    <div class="people">
+    <div class="people" style="max-width: 750px; margin: 0 auto;">
         <div class="person">
             <a href="https://yujiwen.github.io/" target="_blank">
                 <img src="images/jiwen_yu.jpg" alt="Jiwen Yu">
@@ -908,7 +961,7 @@
     <div class="contact-content">
         <p>For any questions, please contact us at:</p>
         <p style="margin-top: 15px; font-size: 1.1rem;">
-            <a href="mailto:yujiwen.hk@connect.hku.hk">yujiwen.hk@connect.hku.hk</a>
+            <a href="/cdn-cgi/l/email-protection#5128243b3826343f7f393a11323e3f3f3432257f393a247f393a"><span class="__cf_email__" data-cfemail="e39a96898a94868dcd8b88a3808c8d8d868097cd8b8896cd8b88">[email&#160;protected]</span></a>
         </p>
     </div>
 </section>
@@ -917,7 +970,7 @@
     &copy; 2026 VideoWorldModel Workshop @ CVPR
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Mobile menu toggle
     function toggleMenu() {
         document.querySelector('.nav-links').classList.toggle('active');
