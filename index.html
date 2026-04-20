@@ -356,6 +356,28 @@
             font-weight: 500;
         }
 
+        .schedule-meta {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 24px;
+        }
+
+        .schedule-meta p {
+            color: var(--text-secondary);
+            margin: 0 0 10px;
+            font-size: 0.96rem;
+        }
+
+        .schedule-meta p:last-child {
+            margin-bottom: 0;
+        }
+
+        .schedule-meta strong {
+            color: var(--text-primary);
+        }
+
         /* Call for Papers */
         .cfp-content h3 {
             font-size: 1.2rem;
@@ -843,7 +865,9 @@
     <p class="subtitle">Interaction, Memory, and Efficiency</p>
     <div class="info">
         <span><span class="icon">📍</span> Denver, Colorado</span>
-        <span><span class="icon">📅</span> June 3-7, 2026</span>
+        <span><span class="icon">📅</span> June 3rd, 2026</span>
+        <span><span class="icon">🕗</span> AM Session (8:00 AM - 1:00 PM)</span>
+        <span><span class="icon">🏛️</span> Room 705/707</span>
         <span><span class="icon">🎯</span> CVPR 2026</span>
     </div>
 </header>
@@ -925,6 +949,12 @@
 
 <section id="schedule">
     <h2>Schedule</h2>
+    <div class="schedule-meta">
+        <p><strong>Workshop Date:</strong> June 3rd</p>
+        <p><strong>Time Slot:</strong> AM session, 8:00 AM - 1:00 PM</p>
+        <p><strong>Room:</strong> Room 705/707</p>
+        <p><strong>Poster Location:</strong> Posters for all workshops will be presented in Exhibit Hall A.</p>
+    </div>
     <div class="schedule-table">
         <table>
             <thead>
