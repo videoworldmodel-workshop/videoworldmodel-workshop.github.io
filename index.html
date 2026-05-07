@@ -509,11 +509,124 @@
         .btn.disabled {
             opacity: 0.5;
             cursor: not-allowed;
+            pointer-events: none;
+            text-decoration: line-through;
         }
 
         .btn.disabled:hover {
             background: transparent;
             color: var(--accent);
+        }
+
+        /* Accepted Papers */
+        .section-intro {
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 720px;
+            margin: -10px auto 28px;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(0,255,136,0.05));
+            border: 1px solid rgba(0,212,255,0.25);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0,212,255,0.45);
+        }
+
+        .stat-card .stat-number {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .stat-label {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .stat-card .stat-note {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .stat-card.award {
+            background: linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,212,255,0.05));
+        }
+
+        .paper-track {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        .paper-track:last-child {
+            margin-bottom: 0;
+        }
+
+        .paper-track h3 {
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .track-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .track-heading h3 {
+            margin: 0;
+        }
+
+        .track-badge {
+            color: var(--accent);
+            background: var(--accent-dim);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .paper-list {
+            padding-left: 24px;
+        }
+
+        .paper-list li {
+            color: var(--text-secondary);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.6;
+        }
+
+        .paper-list li:last-child {
+            border-bottom: none;
         }
 
         /* People Grid */
@@ -568,6 +681,30 @@
         .person span {
             color: var(--text-secondary);
             font-size: 0.8rem;
+        }
+
+        .reviewer-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 18px;
+            margin-top: 26px;
+        }
+
+        .reviewer-list a,
+        .reviewer-list span {
+            color: var(--text-secondary);
+            text-decoration: none;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 8px 14px;
+            transition: border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .reviewer-list a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         /* Speakers specific styling - larger spacing */
@@ -850,6 +987,7 @@
             <a href="#speakers">Speakers</a>
             <a href="#schedule">Schedule</a>
             <a href="#cfp">Call for Papers</a>
+            <a href="#accepted-papers">Accepted Papers</a>
             <a href="#challenge">Challenge</a>
             <a href="#organizers">Organizers</a>
             <a href="#sponsors">Sponsors</a>
@@ -1040,7 +1178,7 @@
                     <li><span>Camera-Ready Deadline</span> <strong>April 10, 2026</strong></li>
                 </ul>
                 <div style="text-align: center;">
-                    <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VideoWorldModel_Proceedings_Track" class="btn">Submission Portal</a>
+                    <span class="btn disabled">Submission Portal</span>
                 </div>
             </div>
 
@@ -1060,7 +1198,7 @@
                     <li><span>Camera-Ready Deadline</span> <strong>May 11, 2026</strong></li>
                 </ul>
                 <div style="text-align: center;">
-                    <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/VideoWorldModel_Non-Proceedings_Track" class="btn">Submission Portal</a>
+                    <span class="btn disabled">Submission Portal</span>
                 </div>
             </div>
         </div>
@@ -1070,6 +1208,74 @@
             <li>Proceedings Track papers must follow the official CVPR 2026 template and be anonymized for double-blind review</li>
             <li>Supplementary materials (videos, code, etc.) are welcome</li>
         </ul>
+    </div>
+</section>
+
+<section id="accepted-papers">
+    <h2>Accepted Papers</h2>
+    <p class="section-intro">
+        We are pleased to feature accepted work across both proceedings and non-proceedings tracks.
+    </p>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Proceedings Track Papers</span>
+            <span class="stat-note">Archival workshop proceedings</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">25</span>
+            <span class="stat-label">Non-Proceedings Track Papers</span>
+            <span class="stat-note">Non-archival workshop posters</span>
+        </div>
+        <div class="stat-card award">
+            <span class="stat-number">*</span>
+            <span class="stat-label">Best Paper Award</span>
+            <span class="stat-note">Coming soon</span>
+        </div>
+    </div>
+    <div class="paper-track">
+        <div class="track-heading">
+            <h3>Proceedings Track</h3>
+            <span class="track-badge">3 papers</span>
+        </div>
+        <ol class="paper-list">
+            <li>GameCraft-2: Instruction-following Interactive Game World Model</li>
+            <li>Causal Physics Steering in Video World Models via Concept Activation Vectors</li>
+            <li>CoDA: Cosmos-driven DCT-Adaptive Sparse Attention for Efficient Robotic Trajectory Generation</li>
+        </ol>
+    </div>
+    <div class="paper-track">
+        <div class="track-heading">
+            <h3>Non-Proceedings Track</h3>
+            <span class="track-badge">25 papers</span>
+        </div>
+        <ol class="paper-list">
+            <li>Inference-Time Planning with Action-Conditioned Video Models for Generalizable Robot Manipulation</li>
+            <li>WorldPack: Dynamic Frame Compression for Long-context Video World Modeling</li>
+            <li>Future Optical Flow Prediction Improves Robot Control &amp; Video Generation</li>
+            <li>OmniView: An All-Seeing Diffusion Model for 3D and 4D View Synthesis</li>
+            <li>SEGAR: Selective Enhancement for Generative Augmented Reality</li>
+            <li>The Pulse of Motion: Measuring Physical Frame Rate from Visual Dynamics</li>
+            <li>Forecasting Animal Motion in the Wild</li>
+            <li>NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos</li>
+            <li>Objects in Generated Videos Are Slower Than They Appear: Models Suffer Sub-Earth Gravity and Don't Know Galileo's Principle...for now</li>
+            <li>EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses</li>
+            <li>Dexterous World Models</li>
+            <li>Causal State Entropy Bounds on Predictive Horizons in Video World Models</li>
+            <li>Causal State Compression for Long-Horizon Video World Models: A Bounded-Drift Theory and Efficient Architecture</li>
+            <li>Spectral World Models: Provably Consistent Long-Horizon Video Generation via Koopman Operator Decomposition</li>
+            <li>Building a Precise Video Language with Human–AI Oversight</li>
+            <li>Olaf-World: Orienting Latent Actions for Video World Modeling</li>
+            <li>DECOMWM: Interpretable Reward Decomposition for World-Model-Based Trajectory Selection</li>
+            <li>WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation</li>
+            <li>RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation</li>
+            <li>When Predictive World Models Meet Diffusion</li>
+            <li>Is Your Driving World Model an All-Around Player?</li>
+            <li>WFM-Eval: Interpretable Error Diagnostics for Video World Models in Robotics</li>
+            <li>VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control</li>
+            <li>Rays as Pixels: Learning a Joint Distribution of Videos and Camera Trajectories</li>
+            <li>Video Models Reason Early: Exploiting Plan Commitment for Maze Solving</li>
+        </ol>
     </div>
 </section>
 
@@ -1203,6 +1409,55 @@
                 <p><strong>Yao Teng</strong><span>HKU</span></p>
             </a>
         </div>
+    </div>
+</section>
+
+<section id="reviewers">
+    <h2>Reviewers</h2>
+    <p class="section-intro">
+        We thank our reviewers for their thoughtful feedback and service to the workshop community.
+    </p>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-number">33</span>
+            <span class="stat-label">Reviewers</span>
+            <span class="stat-note">Serving both submission tracks</span>
+        </div>
+    </div>
+    <div class="reviewer-list">
+        <a href="https://openreview.net/profile?id=%7EBotao_Deng1" target="_blank">Botao Deng</a>
+        <a href="https://openreview.net/profile?id=%7EDiankun_Wu1" target="_blank">Diankun Wu</a>
+        <a href="https://openreview.net/profile?id=%7EGongye_Liu1" target="_blank">Gongye Liu</a>
+        <a href="https://openreview.net/profile?id=%7EHao_Ge_Deng1" target="_blank">Hao Ge Deng</a>
+        <a href="https://openreview.net/profile?id=%7EHaoran_He1" target="_blank">Haoran He</a>
+        <a href="https://openreview.net/profile?id=%7EHaoyu_Wu3" target="_blank">Haoyu Wu</a>
+        <a href="https://openreview.net/profile?id=%7EHeng_Zhou3" target="_blank">Heng Zhou</a>
+        <a href="https://openreview.net/profile?id=%7EJianhong_Bai2" target="_blank">Jianhong Bai</a>
+        <a href="https://openreview.net/profile?id=%7EJiehui_Huang2" target="_blank">Jiehui Huang</a>
+        <a href="https://openreview.net/profile?id=%7EJingye_Chen2" target="_blank">Jingye Chen</a>
+        <a href="https://openreview.net/profile?id=%7EJiwen_Yu1" target="_blank">Jiwen Yu</a>
+        <a href="https://openreview.net/profile?id=%7EKaiyi_Huang1" target="_blank">Kaiyi Huang</a>
+        <a href="https://openreview.net/profile?id=%7ELi_Kang2" target="_blank">Li Kang</a>
+        <a href="https://openreview.net/profile?id=%7ELu_QIU1" target="_blank">Lu Qiu</a>
+        <a href="https://openreview.net/profile?id=%7EMinghong_Cai1" target="_blank">Minghong Cai</a>
+        <a href="https://openreview.net/profile?id=%7EMin_Zhao3" target="_blank">Min Zhao</a>
+        <a href="https://openreview.net/profile?id=%7ENISHANT_GUPTA1" target="_blank">Nishant Gupta</a>
+        <a href="https://openreview.net/profile?id=%7EQinghe_Wang1" target="_blank">Qinghe Wang</a>
+        <a href="https://openreview.net/profile?id=%7ETeng_Hu1" target="_blank">Teng Hu</a>
+        <a href="https://openreview.net/profile?id=%7EWeiyang_Jin1" target="_blank">Weiyang Jin</a>
+        <a href="https://openreview.net/profile?id=%7EWuyang_Li1" target="_blank">Wuyang Li</a>
+        <a href="https://openreview.net/profile?id=%7EXiaoshi_Wu1" target="_blank">Xiaoshi Wu</a>
+        <a href="https://openreview.net/profile?id=%7EXiufeng_Song1" target="_blank">Xiufeng Song</a>
+        <a href="https://openreview.net/profile?id=%7EYang_Zhang49" target="_blank">Yang Zhang</a>
+        <a href="https://openreview.net/profile?id=%7EYao_Teng1" target="_blank">Yao Teng</a>
+        <a href="https://openreview.net/profile?id=%7EYawen_Luo1" target="_blank">Yawen Luo</a>
+        <a href="https://openreview.net/profile?id=%7EYifei_Yu2" target="_blank">Yifei Yu</a>
+        <a href="https://openreview.net/profile?id=%7EYiran_Qin1" target="_blank">Yiran Qin</a>
+        <a href="https://openreview.net/profile?id=%7EYuxin_Jiang2" target="_blank">Yuxin Jiang</a>
+        <a href="https://openreview.net/profile?id=%7EZhiheng_Liu1" target="_blank">Zhiheng Liu</a>
+        <a href="https://openreview.net/profile?id=%7EZhihuan_Jiang1" target="_blank">Zhihuan Jiang</a>
+        <a href="https://openreview.net/profile?id=%7EZiqiao_Peng1" target="_blank">Ziqiao Peng</a>
+        <a href="https://openreview.net/profile?id=%7EZongyue_Li1" target="_blank">Zongyue Li</a>
     </div>
 </section>
 
